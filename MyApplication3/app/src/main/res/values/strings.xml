@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">IMDB</string>
+    <string name="year">Year :</string>
+    <string name="RunTime">RunTime :</string>
+    <string name="Genre">Genre :</string>
+    <string name="Director">Director :</string>
+    <string name="Actors">Actors :</string>
+
+    <string name="Rated">Rated :</string>
+    <string name="Released">Released :</string>
+    <string name="Language">Language :</string>
+    <string name="title_activity_expand_image">ExpandImage</string>
 
 
 </resources>

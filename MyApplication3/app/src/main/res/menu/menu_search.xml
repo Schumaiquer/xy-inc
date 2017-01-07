@@ -9,5 +9,10 @@
         app:showAsAction="always"
         ></item>
 
+    <item android:id="@+id/save"
+        android:title="Save"
+        android:icon="@drawable/ic_action_save3"
+        app:showAsAction="ifRoom"
+        ></item>
 
 </menu>

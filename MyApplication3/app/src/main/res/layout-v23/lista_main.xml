@@ -19,19 +19,19 @@
             android:gravity="center_horizontal">
 
         <ImageView
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:id="@+id/imageViewID"
-            android:layout_weight="0.4"
-            android:layout_below="@+id/textID"/>
+            android:layout_weight="0.4" />
 
         <TextView
             android:id="@+id/textID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Title"
+            android:text="titulo"
             android:background="@color/color1"
+            android:layout_toRightOf="@+id/imageViewID"
             android:layout_marginLeft="3dp"
             android:layout_alignParentTop="true"/>
 
@@ -39,17 +39,15 @@
                 android:id="@+id/scrollViewID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/imageViewID"
+                android:layout_alignLeft="@+id/textID"
                 android:layout_below="@+id/textID"
                 android:clickable="false"
                 android:contextClickable="false">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_below="@+id/textID"
-                    android:layout_weight="0.6">
+                    android:orientation="vertical">
 
         <TextView
             android:id="@+id/text2ID"
@@ -57,7 +55,9 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="ahhahaha"
-            android:textSize="10dp"/>
+            android:layout_below="@+id/textID"
+            android:textSize="10dp"
+            android:layout_alignLeft="@+id/textID"/>
 
 
             <TextView
@@ -65,9 +65,10 @@
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/year"
+                android:text="Ano : "
                 android:layout_alignTop="@+id/text4ID"
                 android:textSize="10dp"
+                android:layout_alignLeft="@+id/textID"
                 android:textStyle="bold"/>
 
             <TextView
@@ -83,12 +84,13 @@
 
             <TextView
                 android:id="@+id/text5ID"
-                android:layout_width="44dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/Director"
+                android:text="Diretor :"
                 android:layout_alignTop="@+id/text6ID"
                 android:textSize="10dp"
+                android:layout_alignLeft="@+id/textID"
                 android:textStyle="bold"/>
 
             <TextView
@@ -108,9 +110,10 @@
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/Actors"
+                android:text="Atores :"
                 android:layout_alignTop="@+id/text9ID"
                 android:textSize="10dp"
+                android:layout_alignLeft="@+id/textID"
                 android:textStyle="bold"/>
 
             <TextView
@@ -120,7 +123,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="WWWWWWWWWWWWWWW"
                 android:layout_below="@+id/text6ID"
-                android:layout_toRightOf="@+id/text8ID"
+                android:layout_toRightOf="@+id/text5ID"
                 android:layout_marginTop="3dp"
                 android:textSize="10dp" />
 
@@ -129,9 +132,10 @@
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/Genre"
+                android:text="Gênero : "
                 android:layout_alignTop="@+id/text11ID"
                 android:textSize="10dp"
+                android:layout_alignLeft="@+id/textID"
                 android:textStyle="bold"/>
 
             <TextView
@@ -141,18 +145,19 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text=" KKKKKKKKKKKKKKKKK"
                 android:layout_below="@+id/text9ID"
-                android:layout_toRightOf="@+id/text10ID"
+                android:layout_toRightOf="@+id/text5ID"
                 android:layout_marginTop="4dp"
                 android:textSize="10dp" />
 
             <TextView
                 android:id="@+id/text12ID"
-                android:layout_width="50dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/RunTime"
+                android:text="Tempo : "
                 android:layout_alignTop="@+id/text13ID"
                 android:textSize="10dp"
+                android:layout_alignLeft="@+id/textID"
                 android:textStyle="bold"/>
 
             <TextView
@@ -162,79 +167,17 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text=" LLLLLLLLLLLLLLLL"
                 android:layout_below="@+id/text11ID"
-                android:layout_toRightOf="@+id/text12ID"
+                android:layout_toRightOf="@+id/text5ID"
                 android:layout_marginTop="4dp"
                 android:textSize="10dp" />
 
-                    <TextView
-                        android:id="@+id/text14ID"
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="@string/Rated"
-                        android:layout_alignTop="@+id/text15ID"
-                        android:textSize="10dp"
-                        android:textStyle="bold"/>
 
-                    <TextView
-                        android:id="@+id/text15ID"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text=" AAAAAAAAAAAAAAAA"
-                        android:layout_below="@+id/text13ID"
-                        android:layout_toRightOf="@+id/text14ID"
-                        android:layout_marginTop="4dp"
-                        android:textSize="10dp" />
-
-                    <TextView
-                        android:id="@+id/text16ID"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="@string/Released"
-                        android:layout_alignTop="@+id/text17ID"
-                        android:textSize="10dp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/text17ID"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="TTTTTTTTTTTTT"
-                        android:layout_below="@+id/text15ID"
-                        android:layout_toRightOf="@+id/text16ID"
-                        android:layout_marginTop="4dp"
-                        android:textSize="10dp" />
-
-                    <TextView
-                        android:id="@+id/text18ID"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="@string/Language"
-                        android:layout_alignTop="@+id/text19ID"
-                        android:textSize="10dp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/text19ID"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="RRRRRRRRRRRRR"
-                        android:layout_below="@+id/text17ID"
-                        android:layout_toRightOf="@+id/text16ID"
-                        android:layout_marginTop="4dp"
-                        android:textSize="10dp" />
-
-
-                    <ImageButton
+            <ImageButton
                 android:id="@+id/imageButtonID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/text7ID"
+                android:layout_alignLeft="@+id/text5ID"
                 android:background="@drawable/ic_action_save"
                 android:layout_marginRight="5dp"/>
 
@@ -244,14 +187,12 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="37"
-                android:layout_below="@+id/text19ID"
+                android:layout_below="@+id/text13ID"
                 android:layout_toRightOf="@+id/imageButtonID"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:padding="8dp"/>
-
-
-                </RelativeLayout>
+                </LinearLayout>
 
             </ScrollView>
 

@@ -13,11 +13,21 @@ public class FilmeObj {
     private String Actors;
     private String Plot;
     private String Language;
-
+    private String imdbID;
+    private String imdbRating;
+    private String Writer;
 
 
     private String Poster;
     private Bitmap imagem;
+
+    public String getWriter() {return Writer;}
+
+    public String getImdbRating(){return imdbRating;}
+
+    public String getImdbID() {
+        return imdbID;
+    }
 
     public String getYear() {
         return Year;

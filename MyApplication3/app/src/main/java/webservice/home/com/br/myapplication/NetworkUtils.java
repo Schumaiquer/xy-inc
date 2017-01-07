@@ -13,7 +13,7 @@ public class NetworkUtils {
 
     //Responsavel por carregar o Objeto JSON
 
-    public static String getJSONFromAPI(String url){
+    public static String getJSONFromAPI(String url) {
         String retorno = "";
         try {
             URL apiEnd = new URL(url);
@@ -28,9 +28,9 @@ public class NetworkUtils {
             conexao.connect();
 
             codigoResposta = conexao.getResponseCode();
-            if(codigoResposta < HttpURLConnection.HTTP_BAD_REQUEST){
+            if (codigoResposta < HttpURLConnection.HTTP_BAD_REQUEST) {
                 is = conexao.getInputStream();
-            }else{
+            } else {
                 is = conexao.getErrorStream();
             }
 
@@ -40,26 +40,26 @@ public class NetworkUtils {
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
         return retorno;
     }
 
-    private static String converterInputStreamToString(InputStream is){
+    private static String converterInputStreamToString(InputStream is) {
         StringBuffer buffer = new StringBuffer();
-        try{
+        try {
             BufferedReader br;
             String linha;
 
             br = new BufferedReader(new InputStreamReader(is));
-            while((linha = br.readLine())!=null){
+            while ((linha = br.readLine()) != null) {
                 buffer.append(linha);
             }
 
             br.close();
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

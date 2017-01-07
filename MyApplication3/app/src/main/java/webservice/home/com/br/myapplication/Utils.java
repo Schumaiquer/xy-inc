@@ -67,8 +67,6 @@ public class Utils {
             e.printStackTrace();
             return null;
         }
-
-
     }
 
     public Bitmap baixarImagem(String url) {
