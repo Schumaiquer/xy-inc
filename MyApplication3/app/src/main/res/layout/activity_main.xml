@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="webservice.home.com.br.myapplication.MainActivity">
+    tools:context=".view.MainActivity">
 
 
     <android.support.design.widget.CoordinatorLayout
@@ -23,6 +23,17 @@
             tools:listitem="@layout/lista_main"
             />
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="No movies searched" />
+
     </android.support.design.widget.CoordinatorLayout>
+
+
 
 </LinearLayout>

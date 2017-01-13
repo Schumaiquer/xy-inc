@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:screenOrientation="nosensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,13 +20,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivitySavedFiles"
+            android:name=".view.ActivitySavedFiles"
             android:screenOrientation="nosensor" />
         <activity
-            android:name=".ExpandImage"
+            android:name=".view.MainActivityExpand"
             android:label="@string/title_activity_expand_image"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivityExpand"></activity>
     </application>
 
 </manifest>

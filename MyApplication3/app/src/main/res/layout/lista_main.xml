@@ -22,8 +22,16 @@
             android:layout_width="150dp"
             android:layout_height="match_parent"
             android:id="@+id/imageViewID"
-            android:layout_weight="0.4"
+            android:layout_above="@+id/ButtonID2"
             android:layout_below="@+id/textID"/>
+
+            <Button
+                android:id="@+id/ButtonID2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:text="Save"
+                android:layout_alignRight="@+id/imageViewID"/>
 
         <TextView
             android:id="@+id/textID"
@@ -32,7 +40,6 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Title"
             android:background="@color/color1"
-            android:layout_marginLeft="3dp"
             android:layout_alignParentTop="true"/>
 
             <ScrollView
@@ -45,11 +52,13 @@
                 android:contextClickable="false">
 
                 <RelativeLayout
+                    android:id="@+id/relative_layoutID"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_below="@+id/textID"
-                    android:layout_weight="0.6">
+                    android:layout_weight="0.6"
+                    android:layout_margin="3dp">
 
         <TextView
             android:id="@+id/text2ID"
