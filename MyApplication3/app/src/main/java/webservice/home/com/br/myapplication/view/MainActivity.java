@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.textView2);
 
 
+
+
     }
 
     @Override

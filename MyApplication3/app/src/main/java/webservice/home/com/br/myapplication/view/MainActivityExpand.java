@@ -29,17 +29,14 @@ public class MainActivityExpand extends AppCompatActivity {
 
         if (bundle.get("link") != null) {
 // pega o link de cada imagem
-          String link  = (String) bundle.get("link");
+            String link = (String) bundle.get("link");
 
             image.execute(link);
             try {
                 bitmap2 = image.get();
-            }
-            catch (InterruptedException e){
+            } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
-
-            catch (ExecutionException e){
+            } catch (ExecutionException e) {
                 e.printStackTrace();
             }
 
@@ -50,7 +47,8 @@ public class MainActivityExpand extends AppCompatActivity {
             photoView.update();
         }
     }
-// passar para o baixa imagem o nosso link atraves destes metodos
+
+    // passar para o baixa imagem o nosso link atraves destes metodos
     private class GetImage extends AsyncTask<String, Void, Bitmap> {
 
         private Context context;
@@ -58,8 +56,8 @@ public class MainActivityExpand extends AppCompatActivity {
 
 
         @Override
-        protected void onPreExecute(){
-            load = ProgressDialog.show(context,"","Loading...",true);
+        protected void onPreExecute() {
+            load = ProgressDialog.show(context, "", "Loading...", true);
         }
 
         public GetImage(Context context) {
@@ -72,13 +70,13 @@ public class MainActivityExpand extends AppCompatActivity {
             Utils util = new Utils();
             Bitmap bitmap;
 
-       bitmap =  util.baixarImagem(params[0]);
+            bitmap = util.baixarImagem(params[0]);
 
             return bitmap;
         }
 
         @Override
-        protected void onPostExecute(Bitmap bitmap){
+        protected void onPostExecute(Bitmap bitmap) {
             load.dismiss();
         }
 

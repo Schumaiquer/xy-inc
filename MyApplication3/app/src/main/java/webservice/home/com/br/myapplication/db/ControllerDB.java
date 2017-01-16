@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public class ControllerDB {
+
     private CreateDB createDB;
     private SQLiteDatabase db;
 
@@ -22,14 +23,34 @@ public class ControllerDB {
 
         return resultado;
     }
+
     public synchronized Cursor CarregaDados(String tabela, String[] campos){
         Cursor cursor;
         db = createDB.getReadableDatabase();
         cursor = db.query(tabela,campos,null,null,null,null,null,null);
-        if(cursor!=null){
+
+        if(cursor!= null){
             cursor.moveToFirst();
         }
         return cursor;
     }
+
+    public synchronized void DeletaDados(String tabela, String where){
+
+        db = createDB.getReadableDatabase();
+        db.delete(tabela,where,null);
+        //database.close();
+    }
+    public synchronized Cursor BuscaDados(String tabela, String[] campos, String where){
+        Cursor cursor;
+        db = createDB.getReadableDatabase();
+        cursor = db.query(tabela,campos,where,null,null,null,null,null);
+        if(cursor!=null){
+
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
 
 }

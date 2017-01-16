@@ -13,26 +13,28 @@ public class DataBase {
     public static final String ACTORS = "actors";
     public static final String PLOT = "plot";
     public static final String LANGUAGE = "language";
-   // public static final String IMDBID = "_id";
-  // public static final String IMDBRATING = "imdbRating";
+    public static final String IMAGE = "image";
+    public static final String IMDBID = "IMDBID";
+    public static final String IMDBRATING = "imdbRating";
     public static final String POSTER = "poster";
 
 
-
     public String campos(){
-        return TITLE + "text PRIMARY KEY,"
-                + YEAR + "text,"
-                + RATED + "text,"
-                + RELEASED + "text,"
-                + RUNTIME + "text,"
-                + GENRE + "text,"
-                + DIRECTOR + "text,"
-                + ACTORS + "text,"
-                + PLOT + "text,"
-                + LANGUAGE + "text,"
-            //    + IMDBID + "text,"
-            //    + IMDBRATING + "text,"
-                + POSTER + "text";
+
+        return TITLE + " text PRIMARY KEY,"
+                + YEAR + " text,"
+                + RATED + " text,"
+                + RELEASED + " text,"
+                + RUNTIME + " text,"
+                + GENRE + " text,"
+                + DIRECTOR + " text,"
+                + ACTORS + " text,"
+                + PLOT + " text,"
+                + LANGUAGE + " text,"
+                + IMDBID + " text,"
+                + IMDBRATING + " text,"
+                + IMAGE + " BLOB,"
+                + POSTER + " text";
 
     }
 

@@ -6,10 +6,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class CreateDB extends SQLiteOpenHelper {
+
     private static final String NOME_BANCO = "bancoIMDB.db";
     public static final String TABELA = "filmes";
     public static DataBase tabela = new DataBase();
-    private static final int VERSAO = 2;
+    private static final int VERSAO = 3;
 
     public CreateDB(Context context){
 

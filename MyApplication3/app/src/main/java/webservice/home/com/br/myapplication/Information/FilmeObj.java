@@ -16,10 +16,28 @@ public class FilmeObj {
     private String imdbID;
     private String imdbRating;
     private String Writer;
-
-
     private String Poster;
     private Bitmap imagem;
+
+
+
+    public FilmeObj(String title , String plot, String year, String director, String actors, String genre, String runtime, String rated, String released, String imdbid, String imdbrating, String language, Bitmap imagem) {
+        this.Title = title;
+        this.Plot = plot;
+        this.Year = year;
+        this.Director = director;
+        this.Actors = actors;
+        this.Genre = genre;
+        this.Runtime = runtime;
+        this.Rated = rated;
+        this.Released = released;
+        this.imdbID = imdbid;
+        this.imdbRating = imdbrating;
+        this.Language = language;
+this.imagem = imagem;
+    }
+
+
 
     public String getWriter() {return Writer;}
 
@@ -28,6 +46,10 @@ public class FilmeObj {
     public String getImdbID() {
 
         return imdbID;
+    }
+
+    public void setImdbRating(String imdbRating) {
+        this.imdbRating = imdbRating;
     }
 
     public void setImdbID(String imdbID) {
