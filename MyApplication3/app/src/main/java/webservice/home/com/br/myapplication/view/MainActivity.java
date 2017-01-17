@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,13 +18,14 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-import webservice.home.com.br.myapplication.adapter.Adapter;
 import webservice.home.com.br.myapplication.Information.FilmeObj;
 import webservice.home.com.br.myapplication.R;
+import webservice.home.com.br.myapplication.adapter.Adapter;
 import webservice.home.com.br.myapplication.connection.Utils;
 
 public class MainActivity extends AppCompatActivity {
@@ -72,19 +74,27 @@ public class MainActivity extends AppCompatActivity {
 
                 download.execute("http://www.omdbapi.com/?s=" + x);
                 try {
+
                     ArrayList<FilmeObj> list;
-
                     list = download.get();
-                    download2.execute(list);
 
+                    download2.execute(list);
                     list = download2.getLista();
 
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.listaReciclavelID);
-                    recyclerView.setAdapter(new Adapter(list, MainActivity.this));
-                    RecyclerView.LayoutManager manager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
-                    recyclerView.setLayoutManager(manager);
+                    if(list == null){
 
+                        Toast toast = Toast.makeText(getApplicationContext(), "Movie not found!", Toast.LENGTH_SHORT);
+                       toast.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_HORIZONTAL, 0, 0);
+                        toast.show();
+                    }
+                    else {
 
+                        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.listaReciclavelID);
+                        recyclerView.setAdapter(new Adapter(list, MainActivity.this, MainActivity.this));
+                        RecyclerView.LayoutManager manager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
+                        recyclerView.setLayoutManager(manager);
+
+                   }
                     //  imageView.setImageBitmap(filmeatual.getImagem());
                 } catch (ExecutionException e) {
                     e.printStackTrace();
@@ -100,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
                 // exibir texto tela
                 // Toast.makeText(MainActivity.this,newText,Toast.LENGTH_SHORT).show();
+
 
                 return false;
 

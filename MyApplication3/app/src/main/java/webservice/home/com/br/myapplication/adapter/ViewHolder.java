@@ -41,9 +41,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
         //ano
         textView3 = (TextView)view.findViewById(R.id.text4ID);
-        //Diretor
         textView4 = (TextView)view.findViewById(R.id.text6ID);
-        //Estrela
         textView5 = (TextView)view.findViewById(R.id.text7ID);
 
         textView6 =(TextView)view.findViewById(R.id.text9ID);

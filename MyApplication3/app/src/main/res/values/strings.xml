@@ -5,11 +5,15 @@
     <string name="Genre">Genre :</string>
     <string name="Director">Director :</string>
     <string name="Actors">Actors :</string>
-
     <string name="Rated">Rated :</string>
     <string name="Released">Released :</string>
     <string name="Language">Language :</string>
     <string name="title_activity_expand_image">ExpandImage</string>
+
+
+    <string name="save">Save</string>
+    <string name="remove">Remove</string>
+
 
 
 </resources>

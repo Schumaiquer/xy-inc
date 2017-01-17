@@ -1,5 +1,6 @@
 package webservice.home.com.br.myapplication.adapter;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +18,7 @@ import webservice.home.com.br.myapplication.Information.FilmeObj;
 import webservice.home.com.br.myapplication.R;
 import webservice.home.com.br.myapplication.db.ControllerDB;
 import webservice.home.com.br.myapplication.db.CreateDB;
+import webservice.home.com.br.myapplication.view.ActivitySavedFiles;
 import webservice.home.com.br.myapplication.view.MainActivity;
 import webservice.home.com.br.myapplication.view.MainActivityExpand;
 
@@ -26,10 +28,12 @@ public class Adapter extends RecyclerView.Adapter {
     private ArrayList<FilmeObj> filme;
     private Context context;
     private ControllerDB controllerDB;
+    private Activity activity;
 
-    public Adapter(ArrayList<FilmeObj> filme, Context context) {
+    public Adapter(ArrayList<FilmeObj> filme, Context context, Activity activity) {
         this.filme = filme;
         this.context = context;
+        this.activity = activity;
         controllerDB = new ControllerDB(context);
     }
 
@@ -71,25 +75,26 @@ public class Adapter extends RecyclerView.Adapter {
         holder.textView11.setText(filmeObj.getLanguage());
 
      //   if (!filmeObj.getPoster().equals("N/A")) {
+        if(context.getClass().equals(MainActivity.class)) {
             holder.imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     Intent intent = new Intent(context, MainActivityExpand.class);
                     intent.putExtra("link", filmeObj.getPoster());
-
                     context.startActivity(intent);
+
                 }
             });
-
+        }
        // }
 
 
         if (context.getClass().equals(MainActivity.class)) {
-            holder.button2.setText("Salvar");
+            holder.button2.setText("Save");
 
         } else {
-            holder.button2.setText("Remove!");
+            holder.button2.setText("Remove");
         }
 
         holder.button2.setOnClickListener(new View.OnClickListener() {
@@ -127,8 +132,15 @@ public class Adapter extends RecyclerView.Adapter {
                     final String where = CreateDB.tabela.TITLE + "=" + "'" + filmeObj.getTitle() + "'";
                     controllerDB.DeletaDados(CreateDB.TABELA, where);
                     Toast.makeText(context, "Removed!", Toast.LENGTH_SHORT).show();
+
+                    Intent i = new Intent(context,ActivitySavedFiles.class);
+                   context.startActivity(i);
+                    activity.finish();
+
+
                 }
             }
+
         });
 
 
@@ -157,6 +169,8 @@ public class Adapter extends RecyclerView.Adapter {
         });}
 */
     }
+
+
 
     public byte[] bitmaptoblob(Bitmap bitmap) {
 

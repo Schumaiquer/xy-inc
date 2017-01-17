@@ -41,16 +41,6 @@ public class ControllerDB {
         db.delete(tabela,where,null);
         //database.close();
     }
-    public synchronized Cursor BuscaDados(String tabela, String[] campos, String where){
-        Cursor cursor;
-        db = createDB.getReadableDatabase();
-        cursor = db.query(tabela,campos,where,null,null,null,null,null);
-        if(cursor!=null){
-
-            cursor.moveToFirst();
-        }
-        return cursor;
-    }
 
 
 }

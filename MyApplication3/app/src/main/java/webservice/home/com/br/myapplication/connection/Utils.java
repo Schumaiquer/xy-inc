@@ -52,6 +52,11 @@ public class Utils {
             ArrayList<FilmeObj> list;
 
             JSONObject object = new JSONObject(json);
+            String object1 = object.getString("Response");
+            if(object1.toString().equals("False")){
+                return null;
+            }
+
             JSONArray array = object.getJSONArray("Search");
             Type type = new TypeToken<ArrayList<FilmeObj>>(){}.getType();
 

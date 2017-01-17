@@ -1,5 +1,6 @@
 package webservice.home.com.br.myapplication.view;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -77,10 +78,15 @@ public class ActivitySavedFiles extends AppCompatActivity {
 
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.listaReciclavel2ID);
-        recyclerView.setAdapter(new Adapter(list, ActivitySavedFiles.this));
+        recyclerView.setAdapter(new Adapter(list, ActivitySavedFiles.this,ActivitySavedFiles.this));
         RecyclerView.LayoutManager manager = new LinearLayoutManager(ActivitySavedFiles.this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
 
+
+    }
+
+    public void refresh(){          //refresh is onClick name given to the button
+        onRestart();
     }
 
     public Bitmap blobtobitmap(byte[] blob) {
@@ -98,6 +104,19 @@ public class ActivitySavedFiles extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
+
+    }
+
+
+
+    @Override
+    public void onRestart() {
+
+        super.onRestart();
+        Intent refresh = new Intent(this, ActivitySavedFiles.class);
+        startActivity(refresh);//Start the same Activity
+        finish(); //finish Activity.
+
 
     }
 
